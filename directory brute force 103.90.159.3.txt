@@ -1,0 +1,471 @@
+$ dirb
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+dirb <url_base> [<wordlist_file(s)>] [options]
+
+========================= NOTES =========================
+ <url_base> : Base URL to scan. (Use -resume for session resuming)
+ <wordlist_file(s)> : List of wordfiles. (wordfile1,wordfile2,wordfile3...)
+
+======================== HOTKEYS ========================
+ 'n' -> Go to next directory.
+ 'q' -> Stop scan. (Saving state for resume)
+ 'r' -> Remaining scan stats.
+
+======================== OPTIONS ========================
+ -a <agent_string> : Specify your custom USER_AGENT.
+ -b : Use path as is.
+ -c <cookie_string> : Set a cookie for the HTTP request.
+ -E <certificate> : path to the client certificate.
+ -f : Fine tunning of NOT_FOUND (404) detection.
+ -H <header_string> : Add a custom header to the HTTP request.
+ -i : Use case-insensitive search.
+ -l : Print "Location" header when found.
+ -N <nf_code>: Ignore responses with this HTTP code.
+ -o <output_file> : Save output to disk.
+ -p <proxy[:port]> : Use this proxy. (Default port is 1080)
+ -P <proxy_username:proxy_password> : Proxy Authentication.
+ -r : Don't search recursively.
+ -R : Interactive recursion. (Asks for each directory)
+ -S : Silent Mode. Don't show tested words. (For dumb terminals)
+ -t : Don't force an ending '/' on URLs.
+ -u <username:password> : HTTP Authentication.
+ -v : Show also NOT_FOUND pages.
+ -w : Don't stop on WARNING messages.
+ -X <extensions> / -x <exts_file> : Append each word with this extensions.
+ -z <millisecs> : Add a milliseconds delay to not cause excessive Flood.
+                                                                                                                                                                                                                                           
+======================== EXAMPLES =======================                                                                                                                                                                                  
+ dirb http://url/directory/ (Simple Test)                                                                                                                                                                                                  
+ dirb http://url/ -X .html (Test files with '.html' extension)                                                                                                                                                                             
+ dirb http://url/ /usr/share/dirb/wordlists/vulns/apache.txt (Test with apache.txt wordlist)                                                                                                                                               
+ dirb https://secure_url/ (Simple Test with SSL)                                                                                                                                                                                           
+┌──(kali㉿kali)-[~]
+└─$ dirb http://erp.lbrce.ac.in/                                  
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Sat May 18 05:12:39 2024
+URL_BASE: http://erp.lbrce.ac.in/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://erp.lbrce.ac.in/ ----
+                                                                               
+(!) FATAL: Too many errors connecting to host
+    (Possible cause: OPERATION TIMEOUT)
+                                                                               
+-----------------
+END_TIME: Sat May 18 05:15:09 2024
+DOWNLOADED: 0 - FOUND: 0
+                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ dirb www.erp.lbrce.ac.in 
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+
+(!) FATAL: Invalid URL format: www.erp.lbrce.ac.in/
+    (Use: "http://host/" or "https://host/" for SSL)
+                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ dirb http://103.90.59.3                                       
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Sat May 18 05:15:55 2024
+URL_BASE: http://103.90.59.3/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://103.90.59.3/ ----
+                                                                               
+(!) FATAL: Too many errors connecting to host
+    (Possible cause: COULDNT CONNECT)
+                                                                               
+-----------------
+END_TIME: Sat May 18 05:15:57 2024
+DOWNLOADED: 0 - FOUND: 0
+                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ dirb http://103.90.159.3
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Sat May 18 05:16:07 2024
+URL_BASE: http://103.90.159.3/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://103.90.159.3/ ----
+==> DIRECTORY: http://103.90.159.3/accounts/                                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/admissions/                                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/alumni/                                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/aspnet_client/                                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/                                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/css/                                                                                                                                                     
+==> DIRECTORY: http://103.90.159.3/employee/                                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/fonts/                                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/gateway/                                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/home/                                                                                                                                                    
+==> DIRECTORY: http://103.90.159.3/Home/                                                                                                                                                    
+==> DIRECTORY: http://103.90.159.3/images/                                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/Images/                                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/img/                                                                                                                                                     
+==> DIRECTORY: http://103.90.159.3/js/                                                                                                                                                      
+==> DIRECTORY: http://103.90.159.3/library/                                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/loading/                                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/login/                                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/Login/                                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/logo/                                                                                                                                                    
+==> DIRECTORY: http://103.90.159.3/masters/                                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/performance/                                                                                                                                             
+==> DIRECTORY: http://103.90.159.3/popup/                                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/reports/                                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/settings/                                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/source/                                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/stores/                                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/student/                                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/transport/                                                                                                                                               
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/accounts/ ----
+==> DIRECTORY: http://103.90.159.3/accounts/reports/                                                                                                                                        
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/admissions/ ----
+==> DIRECTORY: http://103.90.159.3/admissions/reports/                                                                                                                                      
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/alumni/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/aspnet_client/ ----
+==> DIRECTORY: http://103.90.159.3/aspnet_client/system_web/                                                                                                                                
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/                                                                                                                                            
+==> DIRECTORY: http://103.90.159.3/assets/Admin/                                                                                                                                            
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/                                                                                                                                            
+==> DIRECTORY: http://103.90.159.3/assets/css/                                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/global/                                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/Global/                                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/img/                                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/js/                                                                                                                                               
+==> DIRECTORY: http://103.90.159.3/assets/plugins/                                                                                                                                          
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/css/ ----
+==> DIRECTORY: http://103.90.159.3/css/images/                                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/css/Images/                                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/employee/ ----
+==> DIRECTORY: http://103.90.159.3/employee/reports/                                                                                                                                        
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/fonts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/gateway/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/home/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/Home/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/images/ ----
+==> DIRECTORY: http://103.90.159.3/images/reports/                                                                                                                                          
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/Images/ ----
+==> DIRECTORY: http://103.90.159.3/Images/reports/                                                                                                                                          
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/img/ ----
++ http://103.90.159.3/img/favicon.ico (CODE:200|SIZE:1150)                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/img/logo/                                                                                                                                                
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/js/ ----
+==> DIRECTORY: http://103.90.159.3/js/img/                                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/js/time/                                                                                                                                                 
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/library/ ----
+==> DIRECTORY: http://103.90.159.3/library/reports/                                                                                                                                         
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/loading/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/login/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/Login/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/logo/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/masters/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/performance/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/popup/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/settings/ ----
+==> DIRECTORY: http://103.90.159.3/settings/reports/                                                                                                                                        
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/source/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/stores/ ----
+==> DIRECTORY: http://103.90.159.3/stores/reports/                                                                                                                                          
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/student/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/transport/ ----
+==> DIRECTORY: http://103.90.159.3/transport/reports/                                                                                                                                       
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/accounts/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/admissions/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/aspnet_client/system_web/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/layout/                                                                                                                                     
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/                                                                                                                                      
+==> DIRECTORY: http://103.90.159.3/assets/admin/Pages/                                                                                                                                      
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Admin/ ----
+==> DIRECTORY: http://103.90.159.3/assets/Admin/layout/                                                                                                                                     
+==> DIRECTORY: http://103.90.159.3/assets/Admin/pages/                                                                                                                                      
+==> DIRECTORY: http://103.90.159.3/assets/Admin/Pages/                                                                                                                                      
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/ADMIN/ ----
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/layout/                                                                                                                                     
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/pages/                                                                                                                                      
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/Pages/                                                                                                                                      
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/css/ ----
+==> DIRECTORY: http://103.90.159.3/assets/css/ie/                                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/css/images/                                                                                                                                       
+==> DIRECTORY: http://103.90.159.3/assets/css/Images/                                                                                                                                       
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/global/ ----
+==> DIRECTORY: http://103.90.159.3/assets/global/css/                                                                                                                                       
+==> DIRECTORY: http://103.90.159.3/assets/global/img/                                                                                                                                       
+==> DIRECTORY: http://103.90.159.3/assets/global/plugins/                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/assets/global/scripts/                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/assets/global/Scripts/                                                                                                                                   
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Global/ ----
+==> DIRECTORY: http://103.90.159.3/assets/Global/css/                                                                                                                                       
+==> DIRECTORY: http://103.90.159.3/assets/Global/img/                                                                                                                                       
+==> DIRECTORY: http://103.90.159.3/assets/Global/plugins/                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/assets/Global/scripts/                                                                                                                                   
+==> DIRECTORY: http://103.90.159.3/assets/Global/Scripts/                                                                                                                                   
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/img/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/js/ ----
+==> DIRECTORY: http://103.90.159.3/assets/js/ie/                                                                                                                                            
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/plugins/ ----
+==> DIRECTORY: http://103.90.159.3/assets/plugins/timeline/                                                                                                                                 
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/css/images/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/css/Images/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/employee/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/images/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/Images/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/img/logo/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/js/img/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/js/time/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/library/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/settings/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/stores/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/transport/reports/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/layout/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/layout/css/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/admin/layout/img/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/admin/layout/scripts/                                                                                                                             
+==> DIRECTORY: http://103.90.159.3/assets/admin/layout/Scripts/                                                                                                                             
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/pages/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/css/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/img/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/scripts/                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Scripts/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/Pages/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/Pages/css/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/admin/Pages/img/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/admin/Pages/media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/admin/Pages/Media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/admin/Pages/scripts/                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/admin/Pages/Scripts/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Admin/layout/ ----
+==> DIRECTORY: http://103.90.159.3/assets/Admin/layout/css/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/Admin/layout/img/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/Admin/layout/scripts/                                                                                                                             
+==> DIRECTORY: http://103.90.159.3/assets/Admin/layout/Scripts/                                                                                                                             
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Admin/pages/ ----
+==> DIRECTORY: http://103.90.159.3/assets/Admin/pages/css/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/Admin/pages/img/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/Admin/pages/media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/Admin/pages/Media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/Admin/pages/scripts/                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/Admin/pages/Scripts/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Admin/Pages/ ----
+==> DIRECTORY: http://103.90.159.3/assets/Admin/Pages/css/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/Admin/Pages/img/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/Admin/Pages/media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/Admin/Pages/Media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/Admin/Pages/scripts/                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/Admin/Pages/Scripts/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/ADMIN/layout/ ----
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/layout/css/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/layout/img/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/layout/scripts/                                                                                                                             
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/layout/Scripts/                                                                                                                             
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/ADMIN/pages/ ----
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/pages/css/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/pages/img/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/pages/media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/pages/Media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/pages/scripts/                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/pages/Scripts/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/ADMIN/Pages/ ----
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/Pages/css/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/Pages/img/                                                                                                                                  
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/Pages/media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/Pages/Media/                                                                                                                                
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/Pages/scripts/                                                                                                                              
+==> DIRECTORY: http://103.90.159.3/assets/ADMIN/Pages/Scripts/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/css/ie/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/css/images/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/css/Images/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/global/css/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/global/img/ ----
+==> DIRECTORY: http://103.90.159.3/assets/global/img/flags/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/global/img/social/                                                                                                                                
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/global/plugins/ ----
+==> DIRECTORY: http://103.90.159.3/assets/global/plugins/ckeditor/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/global/plugins/fancybox/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/global/plugins/rateit/                                                                                                                            
+==> DIRECTORY: http://103.90.159.3/assets/global/plugins/zoom/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/global/scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/global/Scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Global/css/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Global/img/ ----
+==> DIRECTORY: http://103.90.159.3/assets/Global/img/flags/                                                                                                                                 
+==> DIRECTORY: http://103.90.159.3/assets/Global/img/social/                                                                                                                                
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Global/plugins/ ----
+==> DIRECTORY: http://103.90.159.3/assets/Global/plugins/ckeditor/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/Global/plugins/fancybox/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/Global/plugins/rateit/                                                                                                                            
+==> DIRECTORY: http://103.90.159.3/assets/Global/plugins/zoom/                                                                                                                              
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Global/scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/Global/Scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/js/ie/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/plugins/timeline/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/layout/css/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/layout/css/themes/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/layout/css/Themes/                                                                                                                          
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/layout/img/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/layout/scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/layout/Scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/pages/css/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/pages/img/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/pages/media/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/bg/                                                                                                                             
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/blog/                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/Blog/                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/email/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/gallery/                                                                                                                        
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/invoice/                                                                                                                        
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/pages/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/Pages/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/profile/                                                                                                                        
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/search/                                                                                                                         
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/Search/                                                                                                                         
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/users/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/media/works/                                                                                                                          
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/pages/Media/ ----
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/bg/                                                                                                                             
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/blog/                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/Blog/                                                                                                                           
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/email/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/gallery/                                                                                                                        
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/invoice/                                                                                                                        
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/pages/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/Pages/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/profile/                                                                                                                        
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/search/                                                                                                                         
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/Search/                                                                                                                         
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/users/                                                                                                                          
+==> DIRECTORY: http://103.90.159.3/assets/admin/pages/Media/works/                                                                                                                          
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/pages/scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/pages/Scripts/ ----
+                                                                                                                                                                                            
+---- Entering directory: http://103.90.159.3/assets/admin/Pages/css/ ----
+^A                                                                                                                                                                                           ^A                                                                                                                                                                                           ^X                                                                                                                                                                                           ^X                                                                                                                                                                                           ^X                                                                                                                                                                                           ^C> Testing: http://103.90.159.3/assets/admin/Pages/css/mytag_js                                                                                                                            
+                                                                                                                                                                                             
+┌──(kali㉿kali)-[~]
+└─$ 
